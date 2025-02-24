@@ -17,9 +17,16 @@ public class DanhSach {
 		{
 			System.out.print("Nhập họ và tên sinh viên thứ " + (i + 1) + ": ");
 			ten[i] = scanner.nextLine();
-			System.out.print("Nhập điểm của sinh viên thứ: " + (i + 1) + ": ");
-			diem[i] = scanner.nextDouble();
-			scanner.nextLine();
+			
+			while (true)
+			{
+				System.out.print("Nhập điểm của sinh viên thứ: " + (i + 1) + ": ");
+				diem[i] = scanner.nextDouble();
+				scanner.nextLine();
+				if (diem[i] >= 0 && diem[i] <= 10)
+					break;
+				System.out.println("Điểm không hợp lệ. Vui lòng nhập lại!");
+			}
 		}
 		
 		// Sắp xếp danh sách theo điểm tăng dần
